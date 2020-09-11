@@ -184,6 +184,30 @@ export default class ApiManager {
             )
     }
 
+    addAppTag(appName: string, tagName: string) {
+        const http = this.http
+
+        return Promise.resolve() //
+            .then(
+                http.fetch(http.POST, '/user/apps/appDefinitions/addTag', {
+                    appName: appName,
+                    tagName: tagName,
+                })
+            )
+    }
+
+    removeAppTag(appName: string, tagName: string) {
+        const http = this.http
+
+        return Promise.resolve() //
+            .then(
+                http.fetch(http.POST, '/user/apps/appDefinitions/removeTag', {
+                    appName: appName,
+                    tagName: tagName,
+                })
+            )
+    }
+
     updateConfigAndSave(appName: string, appDefinition: IAppDef) {
         let instanceCount = appDefinition.instanceCount
         let captainDefinitionRelativeFilePath =

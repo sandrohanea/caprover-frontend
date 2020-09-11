@@ -10,6 +10,10 @@ export interface IAppEnvVar {
     value: string
 }
 
+export interface IAppTag {
+    tagName: string
+}
+
 interface IAppVolume {
     containerPath: string
     volumeName?: string
@@ -81,6 +85,8 @@ interface IAppDefinitionBase {
     envVars: IAppEnvVar[]
 
     versions: IAppVersion[]
+
+    tags: IAppTag[]
 }
 
 export interface IAppDef extends IAppDefinitionBase {
